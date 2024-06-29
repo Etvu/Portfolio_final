@@ -1,0 +1,532 @@
+ @keyframes slideleft{
+    from{
+      transform: translateX(-150px);
+      opacity:0;
+    }
+    to{
+      transform: translateY(0px);
+      opacity:1;
+    }
+  }
+  @keyframes slideleft2{
+    from{
+      transform: translateX(-250px);
+      opacity:0;
+    }
+    to{
+      transform: translateY(0px);
+      opacity:1;
+    }
+  }
+  @keyframes slideleft3{
+    from{
+      transform: translateX(-350px);
+      opacity:0;
+    }
+    to{
+      transform: translateY(0px);
+      opacity:1;
+    }
+  }
+*{
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: y mandatory;
+    
+}
+body{
+
+    font-family: 'Raleway', sans-serif;
+    color: #212121;
+    background-color: white;
+}
+section{
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #212121;
+}
+/*Page1*/
+.sidebar{
+    height: 100vh;
+    width: 20%;
+    position: fixed;
+    background-color: #000000;
+    color: white;
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    animation: slideleft 800ms;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.sidebar ul{
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap:5rem; 
+    align-items: center;
+}
+.sidebar ul a{
+    color: white;
+    transition: all 200ms ease-in-out;
+}
+.sidebar ul a:hover{
+    color: rgb(183, 183, 183);
+}
+header{
+    height: 100%;
+}
+/*MAIN*/
+main{
+    margin-left: 20%;
+}
+/*HOME*/
+.home{
+    /*background-color: #8a817c;*/
+    color: black;
+    
+    display: flex;
+    align-items: center;
+    
+}
+
+.infos{
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    gap: 2rem;
+    opacity: 0;
+    animation: slideleft 700ms forwards;
+    animation-delay: 500ms;
+}
+.infos h2{
+    font-size: 4rem;
+    
+}
+.infos h3{
+    font-size: 2rem;
+}
+.infos a{
+    background-color: white;
+    width: 250px;
+    height: 60px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    border-radius: 30px;
+    border : 2px solid black;
+}
+.infos a:hover{
+    
+    background-color: black;
+    color: white;
+}
+.img_div{
+    width: 800px;
+    margin-right: 100px;
+}
+.home img{
+    margin-left: 100px;
+    width: 800px;
+    max-width: 100%;
+    opacity: 0;
+    animation: slideleft 700ms forwards;
+    animation-delay: 1s;
+}
+/*PROJECT*/
+.projects {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 200px;
+    align-items: center;
+}
+.projects div {
+    width: 300px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+.projects div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/affiche1.png');
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.projects div:nth-child(2)::before {
+    background-image: url('img/affiche2.png');
+}
+.projects div:nth-child(3)::before {
+    background-image: url('img/affiche3.png');
+}
+.projects div::after {
+    content: "";
+    color: white;
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.projects div:hover::before {
+    opacity: 0;
+}
+.projects div:hover::after {
+    content: "Site : Planet of the apes";
+    opacity: 1;
+}
+.projects div:nth-child(2):hover::after  {
+    content: "Site : Portfolio";
+}
+.projects div:nth-child(3):hover::after  {
+    content: "Site : Refonte IFAPME";
+}
+/*ABOUTME*/
+.aboutme{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutmediv{
+    background-color: black;
+    width: 70%;
+    color: white;
+    padding: 50px;
+    height: 500px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+}
+.aboutmediv h2{
+    margin-bottom: 40px;
+    font-size: 2.4rem;
+}
+.aboutmediv p{
+    line-height: 2.5rem;
+    font-size: 1.8rem;
+}
+.aboutmediv div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.aboutmediv a{
+    background-color: black;
+    width: 250px;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    border-radius: 30px;
+    border: 2px solid white;
+}
+.aboutmediv a:hover{
+    background-color: white;
+    color: black;
+}   
+
+/*CONTACT*/
+.contact{
+    background-color: white;
+    
+}
+
+.container_card{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    
+
+}
+.container_card div{
+    height: 300px;
+    width: 300px;
+    max-width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container_card i{
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+.container_card h3{
+    font-size: 1.8rem;
+}
+.container_card p{
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+.container_card i:hover{
+    color: rgb(245, 234, 214);
+}
+.container_card a{
+    color: white ;
+}
+@media screen and (max-width: 1300px) {
+    .aboutmediv p{
+        font-size: 1.4rem;
+    }
+    .sidebar ul a{
+        font-size: 1.8rem;
+    }
+    .container_card div{
+        width: 230px;
+        height: 230px;
+    }
+    .container_card i{
+        font-size: 3.5rem;
+    }
+    .container_card h3{
+        font-size: 1.5rem;
+    }
+    .container_card p{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .projects {
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutmediv div{
+        height: 100px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .aboutmediv p{
+        font-size: 1rem;
+    }
+    .container_card{
+        flex-direction: column;
+    }
+    .home{
+
+        display: block;
+    }
+    .aboutmediv a{
+        font-size: 1.5rem;
+        width: 200px;
+        height: 40px;
+    }
+    .infos{
+        padding-top: 50px;
+        margin-left: 0vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        height: 20vh;
+    }
+    .infos h2{
+        margin-top: 0;
+        font-size: 2rem;
+    }
+    .infos h3{
+        font-size: 1.5rem;
+    }
+    .infos a{
+        display: none;
+    }
+    .img_div{
+        max-width: 100%;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .home img{
+        margin-left: 100px;
+        width: 500px;
+        max-width: 100%;
+        margin-left: 0px;
+    }
+    .container_card {
+        margin-top: 100px;
+    }
+    .container_card div{
+        height: 220px;
+        width: 220px;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 640px) {
+    
+    /*MENU*/
+    *{
+        scroll-snap-type: none;
+    }
+    .sidebar{
+        height: 800px;
+        width: 100vw;
+        background-color: black;
+        color: white;
+        position: static;
+    }
+    /*MAIN*/
+    main{
+        margin-left: 0;
+
+    }
+    /*HOME*/
+    .home{
+
+        display: block;
+        height: 600px;
+    }
+
+    .infos{
+        padding-top: 50px;
+        margin-left: 0vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+        height: 20vh;
+    }
+    .infos h2{
+        margin-top: 0;
+        font-size: 2rem;
+    }
+    .infos h3{
+        font-size: 1.5rem;
+    }
+    .infos a{
+        display: none;
+    }
+    .img_div{
+        max-width: 100%;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .home img{
+        margin-left: 100px;
+        width: 500px;
+        max-width: 100%;
+        margin-left: 0px;
+    }
+    /*ABOUTME*/
+  	.aboutme{
+        margin-top: 300px;
+    }
+    .container_card {
+        padding-top: 100px;
+    }
+.aboutme{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.aboutmediv div{
+    height: 50px;
+}
+
+.aboutmediv{
+    background-color: black;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+    padding: 50px;  
+    height: 90vh;
+    font-size: 1.3rem;
+    border-radius: 0px;
+   
+}
+.aboutmediv h2{
+    margin-bottom: 40px;
+    font-size: 2.4rem;
+}
+.aboutmediv p{
+    line-height: 2.5rem;
+    
+}
+/*CONTACT*/
+
+
+.container_card{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    color: color;
+    justify-content: space-around;
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    
+
+}
+.container_card div{
+    max-width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container_card i{
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+.container_card h3{
+    font-size: 1.3rem;
+}
+.container_card p{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.container_card i:hover{
+    color: rgb(245, 234, 214);
+}
+.container_card a{
+    color: white;
+}
+
+}
+@media screen and (max-width: 400px) {
+    .projects {
+        margin-bottom: 20px;
+    }
+    .aboutmediv {
+       height: 100px;
+       padding-bottom: 800px;
+       margin-bottom: 200px;
+    }
+    .aboutmediv a{
+        font-size: 1.2rem;
+        height: 30px;
+        width: 150px;
+    }
+}
